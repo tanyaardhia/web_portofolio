@@ -87,7 +87,7 @@ export default function Navbar() {
           </button>
           <div className="hidden md:flex">
             <LinkedNavbar href="/" title="Home" className="mr-4" />
-            <LinkedNavbar href="/about" title="About" className="mx-4" />
+            <LinkedNavbar href="/About" title="About" className="mx-4" />
             <LinkedNavbar href="/projects" title="Projects" className="mx-4" />
             <LinkedNavbar href="/contact" title="Contact" className="mx-4" />
           </div>
@@ -103,17 +103,17 @@ export default function Navbar() {
         <div className="mt-4 md:hidden">
           <LinkedNavbar href="/" title="Home" className="block py-2 pl-3" />
           <LinkedNavbar
-            href="/about"
+            href="/About"
             title="About"
             className="block py-2 pl-3"
           />
           <LinkedNavbar
-            href="/projects"
+            href="/Projects"
             title="Projects"
             className="block py-2 pl-3"
           />
           <LinkedNavbar
-            href="/contact"
+            href="/Contact"
             title="Contact"
             className="block py-2 pl-3"
           />
