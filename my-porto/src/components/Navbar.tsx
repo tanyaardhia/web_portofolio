@@ -88,7 +88,7 @@ export default function Navbar() {
           <div className="hidden md:flex">
             <LinkedNavbar href="/" title="Home" className="mr-4" />
             <LinkedNavbar href="/About" title="About" className="mx-4" />
-            <LinkedNavbar href="/projects" title="Projects" className="mx-4" />
+            <LinkedNavbar href="/Projects" title="Projects" className="mx-4" />
             <LinkedNavbar href="/contact" title="Contact" className="mx-4" />
           </div>
         </nav>
@@ -108,8 +108,7 @@ export default function Navbar() {
             className="block py-2 pl-3"
           />
           <LinkedNavbar
-            href="/Projects"
-            title="Projects"
+            href="/Projects" title="Projects" 
             className="block py-2 pl-3"
           />
           <LinkedNavbar
