@@ -1,5 +1,6 @@
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import HireMe from "@/components/HireMe";
 import Skills from "@/components/Skills";
 
 export default function About() {
@@ -39,7 +40,8 @@ export default function About() {
             <div className="mt-28">
               <Skills />
               <Experience />
-              <Education/>
+              <Education />
+              <HireMe />
             </div>
           </div>
         </div>
