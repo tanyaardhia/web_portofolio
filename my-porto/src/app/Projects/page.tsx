@@ -51,7 +51,7 @@ const FeaturedProject = ({
           </h2>
         </Link>
 
-        <p className="my-2 font-medium text-stone-950 sm:w-96 lg:w-auto md:w-auto">
+        <p className="my-2 font-medium text-stone-950 sm:w-96 lg:w-auto md:w-auto text-justify">
           {summary}
         </p>
 
@@ -115,6 +115,10 @@ const Project = ({
           </h2>
         </Link>
 
+        <p className="my-2 font-medium text-stone-950 sm:w-96 lg:w-auto md:w-auto text-justify">
+          {summary}
+        </p>
+
         <div className="w-full mt-2 flex items-center justify-between">
           <Link
             href={link}
@@ -154,7 +158,7 @@ export default function Projects() {
                 <FeaturedProject
                   title="Blood Buddy"
                   image={projectBloodBuddy.src}
-                  summary="lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit am lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit am lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor sit amet"
+                  summary="This mobile application is designed to facilitate and speed up the blood donor request process by connecting blood donors with the nearest blood donor center or hospital. Hopefully, with this app, blood donor centers and hospitals can increase blood availability. Among its key features are emergency blood requests when there is an urgent blood demand, loyalty and reward programs for donors who donate blood, and the ability to make blood requests for both hospitals and clients."
                   link="https://github.com/Blood-Buddy"
                   github="https://github.com/Blood-Buddy"
                   type="Featured Project"
@@ -164,7 +168,7 @@ export default function Projects() {
                 <Project
                   title="InstaX"
                   image={projectInstaX.src}
-                  summary="none"
+                  summary="This web-based application provides an interactive platform for users to communicate in real-time and hold discussions in an online forum, where users can post, reply and follow the conversation in real time. The app facilitates the exchange of ideas, information and views quickly and efficiently. Users can connect with the wider community, explore topics of interest, and build a strong social network through this platform."
                   link="https://phase2-group-project.web.app/login"
                   github="https://github.com/hacktiv8-hck65/social-media-app"
                   type="Featured Project"
@@ -175,7 +179,7 @@ export default function Projects() {
                 <Project
                   title="Shoes And Shou"
                   image={projectShoesAndShou.src}
-                  summary="none"
+                  summary="a  web-based e-commerce platform that sells shoes."
                   link="https://github.com/rafizuaf/shoesAndShout"
                   github="https://github.com/rafizuaf/shoesAndShout"
                   type="Project"
