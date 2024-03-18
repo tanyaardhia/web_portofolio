@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content">
+      <footer className="footer p-10 bg-base-200 text-base-conten border-base-300 border-t">
         <nav>
           <h6 className="footer-title">Company</h6>
           <a className="link link-hover">About us</a>
@@ -17,7 +17,7 @@ export default function Footer() {
           <a className="link link-hover">Press kit</a>
         </nav>
       </footer>
-      <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <footer className="footer px-10 py-4 bg-base-200 text-base-content border-base-300">
         <aside className="items-center grid-flow-col">
           <p>
             {new Date().getFullYear()} &copy; All Rights Reserved <br />
