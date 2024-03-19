@@ -89,7 +89,7 @@ export default function Navbar() {
             <LinkedNavbar href="/" title="Home" className="mr-4" />
             <LinkedNavbar href="/About" title="About" className="mx-4" />
             <LinkedNavbar href="/Projects" title="Projects" className="mx-4" />
-            <LinkedNavbar href="/contact" title="Contact" className="mx-4" />
+            <LinkedNavbar href="/Contact" title="Contact" className="mx-4" />
           </div>
         </nav>
         <nav className="flex items-center justify-center">
