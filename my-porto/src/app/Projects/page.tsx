@@ -33,8 +33,8 @@ export default function Projects() {
                       />
                     </Link>
 
-                    <div className="flex items-center text-lg text-[#6b639b] font-medium">
-                      <span>Featured Project</span>
+                    <div className="flex items-center text-lg text-[#6b639b] font-medium hover:font-bold">
+                      <span>Mobile App</span>
                     </div>
                   </div>
 
@@ -79,12 +79,14 @@ export default function Projects() {
                     </motion.a>
 
                     <div className="ml-3">
+                      <Link href="https://github.com/Blood-Buddy">
                       <button
                         type="submit"
                         className="text-white bg-[#8294C4] hover:bg-[#ccd2e5] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       >
                         Visit Project
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -103,8 +105,8 @@ export default function Projects() {
                       />
                     </Link>
 
-                    <div className="flex items-center text-lg text-[#6b639b] font-medium">
-                      <span>Featured Project</span>
+                    <div className="flex items-center text-lg text-[#6b639b] font-medium hover:font-bold">
+                      <span>Website</span>
                     </div>
                   </div>
 
@@ -172,8 +174,8 @@ export default function Projects() {
                       />
                     </Link>
 
-                    <div className="flex items-center text-lg text-[#6b639b] font-medium">
-                      <span>Project</span>
+                    <div className="flex items-center text-lg text-[#6b639b] font-medium hover:font-bold">
+                      <span>Website</span>
                     </div>
                   </div>
 

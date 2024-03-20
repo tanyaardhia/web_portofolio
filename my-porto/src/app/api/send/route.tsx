@@ -43,22 +43,7 @@ import { Resend } from 'resend';
 // }
 
 export async function GET(){
-  const resend = new Resend(process.env.RESEND_API_KEY)
-
-
   try {
-    const {data} = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "tanyaardhiap@gmail.com",
-      subject: 'Hello',
-      react: (
-        <>
-          <h1>Hello</h1>
-          <p>Thank You for contacting me!</p>
-          <p>New Message submitted!</p>
-        </>
-      ),
-    })
     return NextResponse.json({ 'hello' : 'world' });
   } catch (error) {
     return NextResponse.json({ error });
