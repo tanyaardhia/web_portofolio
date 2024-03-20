@@ -1,145 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import projectBloodBuddy from "../../../public/images/BloodBuddy.png";
 import projectInstaX from "../../../public/images/InstaX.png";
 import projectShoesAndShou from "../../../public/images/ShoesAndShou.png";
-
-interface FeaturedProjectProps {
-  type: string;
-  title: string;
-  summary: string;
-  image: string;
-  link: string;
-  github: string;
-}
-
-const FeaturedProject = ({
-  type,
-  title,
-  summary,
-  image,
-  link,
-  github,
-}: FeaturedProjectProps) => {
-  return (
-    <article className="lg:w-full flex items-center justify-between rounded-2xl border border-solid border-black bg-white shadow-2xl p-12 sm:w-screen sm:p-7">
-      <Link
-        href={link}
-        target="_blank"
-        className="w-1/2 cursor-pointer overflow-hidden rounded-lg "
-      >
-        <Image
-          src={image}
-          alt={title}
-          width={800}
-          height={600}
-          className="w-full h-auto"
-        />
-      </Link>
-
-      <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-        <span className="text-[#6b639b] font-medium lg:text-lg sm:text-base">
-          {type}
-        </span>
-        <Link
-          href={link}
-          target="_blank"
-          className="hover:underline underline-offset-2"
-        >
-          <h2 className="my-2 w-full text-left lg:text-3xl font-bold sm:text-2xl">
-            {title}
-          </h2>
-        </Link>
-
-        <p className="my-2 font-medium text-stone-950 sm:w-96 lg:w-auto md:w-auto text-justify">
-          {summary}
-        </p>
-
-        <div className="mt-2 flex items-center">
-          <Link href={github} target="_blank" className="w-10">
-            <Image
-              src="/images/github.png"
-              alt="github photo"
-              width={40}
-              height={40}
-            />
-          </Link>
-          <Link
-            href={link}
-            target="_blank"
-            className="ml-4 rounded-lg bg-[#9890c5] text-white p-2 px-6 text-lg font-semibold"
-          >
-            Visit Project
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-};
-
-const Project = ({
-  title,
-  type,
-  image,
-  link,
-  github,
-  summary,
-}: FeaturedProjectProps) => {
-  return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-black bg-white p-6 relative">
-      <Link
-        href={link}
-        target="_blank"
-        className="w-full cursor-pointer overflow-hidden rounded-lg "
-      >
-        <Image
-          src={image}
-          alt={title}
-          width={800}
-          height={600}
-          className="w-full h-auto"
-        />
-      </Link>
-
-      <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-[#6b639b] font-medium lg:text-lg sm:text-base">
-          {type}
-        </span>
-        <Link
-          href={link}
-          target="_blank"
-          className="hover:underline underline-offset-2"
-        >
-          <h2 className="my-2 w-full text-left lg:text-3xl font-bold sm:text-2xl">
-            {title}
-          </h2>
-        </Link>
-
-        <p className="my-2 font-medium text-stone-950 sm:w-96 lg:w-auto md:w-auto text-justify">
-          {summary}
-        </p>
-
-        <div className="w-full mt-2 flex items-center justify-between">
-          <Link
-            href={link}
-            target="_blank"
-            className="rounded-lg text-lg font-semibold hover:text-[#9890c5]"
-          >
-            Visit
-          </Link>
-          <Link href={github} target="_blank" className="w-8">
-            <Image
-              src="/images/github.png"
-              alt="github photo"
-              width={35}
-              height={35}
-            />
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-};
+import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
@@ -153,37 +19,206 @@ export default function Projects() {
               </h1>
             </div>
 
-            <div className="grid grid-cols-12 gap-24">
-              <div className="col-span-12">
-                <FeaturedProject
-                  title="Blood Buddy"
-                  image={projectBloodBuddy.src}
-                  summary="This mobile application is designed to facilitate and speed up the blood donor request process by connecting blood donors with the nearest blood donor center or hospital. Hopefully, with this app, blood donor centers and hospitals can increase blood availability. Among its key features are emergency blood requests when there is an urgent blood demand, loyalty and reward programs for donors who donate blood, and the ability to make blood requests for both hospitals and clients."
-                  link="https://github.com/Blood-Buddy"
-                  github="https://github.com/Blood-Buddy"
-                  type="Featured Project"
-                />
+            <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+              {/* card 1 - bloodbuddy */}
+              <div className="max-w-lg p-4 shadow-md bg-white rounded-xl border border-slate-950">
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Link href={"https://github.com/Blood-Buddy"}>
+                      <img
+                        src={projectBloodBuddy.src}
+                        alt="BloodBuddy"
+                        style={{ objectFit: "contain" }}
+                        className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
+                      />
+                    </Link>
+
+                    <div className="flex items-center text-lg text-[#6b639b] font-medium">
+                      <span>Featured Project</span>
+                    </div>
+                  </div>
+
+                  <div className="text-left">
+                    <Link
+                      href={"https://github.com/Blood-Buddy"}
+                      className="hover:underline underline-offset-2"
+                    >
+                      <h3 className="text-3xl font-bold mb-1 -mt-2">
+                        BloodBuddy
+                      </h3>
+                    </Link>
+                    <p className=" dark:text-gray-400 font-medium text-justify">
+                      This mobile application is designed to facilitate and
+                      speed up the blood donor request process by connecting
+                      blood donors with the nearest blood donor center or
+                      hospital. Hopefully, with this app, blood donor centers
+                      and hospitals can increase blood availability. Among its
+                      key features are emergency blood requests when there is an
+                      urgent blood demand, loyalty and reward programs for
+                      donors who donate blood, and the ability to make blood
+                      requests for both hospitals and clients.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center">
+                    <motion.a
+                      href="https://github.com/Blood-Buddy"
+                      target="_blank"
+                      whileHover={{ y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-10"
+                    >
+                      <div>
+                        <Image
+                          src="/images/github.png"
+                          alt="github photo"
+                          width={40}
+                          height={40}
+                        />
+                      </div>
+                    </motion.a>
+
+                    <div className="ml-3">
+                      <button
+                        type="submit"
+                        className="text-white bg-[#8294C4] hover:bg-[#ccd2e5] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      >
+                        Visit Project
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="col-span-6">
-                <Project
-                  title="InstaX"
-                  image={projectInstaX.src}
-                  summary="This web-based application provides an interactive platform for users to communicate in real-time and hold discussions in an online forum, where users can post, reply and follow the conversation in real time. The app facilitates the exchange of ideas, information and views quickly and efficiently. Users can connect with the wider community, explore topics of interest, and build a strong social network through this platform."
-                  link="https://phase2-group-project.web.app/login"
-                  github="https://github.com/hacktiv8-hck65/social-media-app"
-                  type="Featured Project"
-                />
+
+              {/* card 2 - instaX */}
+              <div className="max-w-lg p-4 shadow-md bg-white rounded-xl border border-slate-950">
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Link href={"https://phase2-group-project.web.app/login"}>
+                      <img
+                        src={projectInstaX.src}
+                        alt="IntsaX"
+                        style={{ objectFit: "contain" }}
+                        className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
+                      />
+                    </Link>
+
+                    <div className="flex items-center text-lg text-[#6b639b] font-medium">
+                      <span>Featured Project</span>
+                    </div>
+                  </div>
+
+                  <div className="text-left">
+                    <Link
+                      href={"https://phase2-group-project.web.app/login"}
+                      className="hover:underline underline-offset-2"
+                    >
+                      <h3 className="text-3xl font-bold mb-1 -mt-2">InstaX</h3>
+                    </Link>
+                    <p className=" dark:text-gray-400 font-medium text-justify">
+                      This web-based application provides an interactive
+                      platform for users to communicate in real-time and hold
+                      discussions in an online forum, where users can post,
+                      reply and follow the conversation in real time. The app
+                      facilitates the exchange of ideas, information and views
+                      quickly and efficiently. Users can connect with the wider
+                      community, explore topics of interest, and build a strong
+                      social network through this platform.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center">
+                    <motion.a
+                      href={
+                        "https://github.com/hacktiv8-hck65/social-media-app"
+                      }
+                      target="_blank"
+                      whileHover={{ y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-10"
+                    >
+                      <Image
+                        src="/images/github.png"
+                        alt="github photo"
+                        width={40}
+                        height={40}
+                      />
+                    </motion.a>
+
+                    <div className="ml-3">
+                      <Link href={"https://phase2-group-project.web.app/login"}>
+                        <button
+                          type="submit"
+                          className="text-white bg-[#8294C4] hover:bg-[#ccd2e5] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                          Visit Project
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="col-span-6">
-                {" "}
-                <Project
-                  title="Shoes And Shou"
-                  image={projectShoesAndShou.src}
-                  summary="a  web-based e-commerce platform that sells shoes."
-                  link="https://github.com/rafizuaf/shoesAndShout"
-                  github="https://github.com/rafizuaf/shoesAndShout"
-                  type="Project"
-                />
+
+              {/* card 3 - ShoesAndShou */}
+              <div className="max-w-lg p-4 shadow-md bg-white rounded-xl border border-slate-950">
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Link href={"https://github.com/rafizuaf/shoesAndShout"}>
+                      <img
+                        src={projectShoesAndShou.src}
+                        alt="IntsaX"
+                        style={{ objectFit: "contain" }}
+                        className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
+                      />
+                    </Link>
+
+                    <div className="flex items-center text-lg text-[#6b639b] font-medium">
+                      <span>Project</span>
+                    </div>
+                  </div>
+
+                  <div className="text-left">
+                    <Link
+                      href={"https://github.com/rafizuaf/shoesAndShout"}
+                      className="hover:underline underline-offset-2"
+                    >
+                      <h3 className="text-3xl font-bold mb-1 -mt-2">
+                        Shoes And Shou
+                      </h3>
+                    </Link>
+                    <p className=" dark:text-gray-400 font-medium text-justify">
+                      a web-based e-commerce platform that sells shoes.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center">
+                    <motion.a
+                      href={"https://github.com/rafizuaf/shoesAndShout"}
+                      target="_blank"
+                      whileHover={{ y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-10"
+                    >
+                      <Image
+                        src="/images/github.png"
+                        alt="github photo"
+                        width={40}
+                        height={40}
+                      />
+                    </motion.a>
+
+                    <div className="ml-3">
+                      <Link href={"https://github.com/rafizuaf/shoesAndShout"}>
+                        <button
+                          type="submit"
+                          className="text-white bg-[#8294C4] hover:bg-[#ccd2e5] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                          Visit Project
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

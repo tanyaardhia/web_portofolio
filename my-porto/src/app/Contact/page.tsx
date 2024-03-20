@@ -6,14 +6,14 @@ import Github from "../../../public/images/github.png";
 import Linkedln from "../../../public/images/linkedln.png";
 
 export default function Contact() {
-  const [emailSent, setEmailSent] = useState(false);
-  const [data, setData] = useState({
+  const [emailSent, setEmailSent] = React.useState(false);
+  const [data, setData] = React.useState({
     email: "",
     subject: "",
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
       email: e.currentTarget.email.value,
@@ -21,24 +21,29 @@ export default function Contact() {
       message: e.currentTarget.message.value,
     };
 
-    try {
-      const response = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    const JSONdata = JSON.stringify(data);
+    const endPoint = "/api/send";
 
-      if (response.ok) {
-        setEmailSent(true);
-        console.log("Message sent successfully");
-      } else {
-        console.error("Failed to send message");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    fetch(endPoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          setEmailSent(true);
+          setData({
+            email: "",
+            subject: "",
+            message: "",
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -137,7 +142,7 @@ export default function Contact() {
                     </button>
                     {emailSent && (
                       <p className="text-indigo-500 text-center">
-                        Message sent successfully
+                        Message sent successfully!
                       </p>
                     )}
                   </div>
@@ -150,4 +155,3 @@ export default function Contact() {
     </div>
   );
 }
-
