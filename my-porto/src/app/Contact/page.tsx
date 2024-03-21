@@ -7,46 +7,6 @@ import Linkedln from "../../../public/images/linkedln.png";
 import { motion } from "framer-motion";
 
 export default function Contact() {
-  const [emailSent, setEmailSent] = React.useState(false);
-  const [data, setData] = React.useState({
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = {
-      email: e.currentTarget.email.value,
-      subject: e.currentTarget.subject.value,
-      message: e.currentTarget.message.value,
-    };
-
-    const JSONdata = JSON.stringify(data);
-    const endPoint = "/api/send";
-
-    fetch(endPoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    })
-      .then((response) => {
-        if (response.status === 200) {
-          setEmailSent(true);
-          setData({
-            email: "",
-            subject: "",
-            message: "",
-          });
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
-
   return (
     <div className="relative bg-[#F5F4F6] sm:bg-[#F5F4F6]">
       <div className="grid">
@@ -90,7 +50,11 @@ export default function Contact() {
 
               {/* form */}
               <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  action={"https://formsubmit.co/tanyaardhiap@gmail.com"}
+                  method="POST"
+                  className="space-y-4"
+                >
                   <div>
                     <label
                       htmlFor="email"
@@ -140,7 +104,8 @@ export default function Contact() {
                       defaultValue={""}
                     />
                   </div>
-
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
                   <div className="mt-4">
                     <button
                       type="submit"
@@ -148,11 +113,6 @@ export default function Contact() {
                     >
                       Send
                     </button>
-                    {emailSent && (
-                      <p className="text-indigo-500 text-center">
-                        Message sent successfully!
-                      </p>
-                    )}
                   </div>
                 </form>
               </div>
