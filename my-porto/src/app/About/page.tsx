@@ -17,7 +17,7 @@ export default function About() {
 
             <div className="col-span-3 flex flex-col items-start justify-start mt-5">
               <p className="font-medium text-lg sm:text-base md:text-lg lg:text-lg xl:text-lg">
-                Hi, I'm Tanya Ardhia Pramesti, a full-stack developer who has
+                Hi, I&apos;m Tanya Ardhia Pramesti, a full-stack developer who has
                 experience in Backend Developer and Frontend Developer. I am
                 highly motivated to transition into a new career path in the
                 tech industry. Recently, I completed Hacktiv8 bootcamp as a

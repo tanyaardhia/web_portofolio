@@ -39,8 +39,10 @@ export default function Home() {
               />
             </h1>
             <p className="text-base sm:text-lg lf:text-xl mb-6 lg:text-xl">
-            Find my creative projects here, let's collaborate to realize great ideas!
+              Find my creative projects here, let&apos;s collaborate to realize
+              great ideas!
             </p>
+
             <div>
               <button
                 className="px-6 py-3 w-full  sm:w-fit rounded-full mr-4 border-[1px] bg-[#8294C4] hover:bg-[#ccd2e5]"

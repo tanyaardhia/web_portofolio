@@ -16,11 +16,12 @@ export default function Contact() {
               <div className="lg:col-span-2 lg:py-12">
                 <h1 className="text-xl font-bold my-2">Let's Connect</h1>
                 <p className="text-gray-600 mb-4 max-w-md text-justify">
-                  I'm currently looking for new opportunities, my inbox is
+                  I&apos;m currently looking for new opportunities, my inbox is
                   always open. Whether you want to connect or you have a
                   question, just send me messages to my inbox and I will try to
                   get back to you!
                 </p>
+
                 <div className="socials flex flex-row gap-2">
                   <motion.a
                     href="https://github.com/tanyaardhia"
